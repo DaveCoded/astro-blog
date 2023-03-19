@@ -3,15 +3,19 @@ import PageLayout from '@layouts/page-layout.astro';
 import { getCollection } from 'astro:content';
 
 const postEntries = await getCollection('posts');
+const sortedPosts = postEntries.sort((a, b) => {
+    return a.data.date > b.data.date ? -1 : 1;
+});
 ---
 
 <PageLayout title="Home">
     <h1>My Astro site</h1>
     <ol>
         {
-            postEntries.map(({ slug, data: { title } }) => (
+            sortedPosts.map(({ slug, data: { title, date } }) => (
                 <li>
                     <a href={`/posts/${slug}`}>{title}</a>
+                    <div>{date.toLocaleDateString()}</div>
                 </li>
             ))
         }
