@@ -12,10 +12,17 @@ const sortedPosts = postEntries.sort((a, b) => {
     <h1>My Astro site</h1>
     <ol>
         {
-            sortedPosts.map(({ slug, data: { title, date } }) => (
+            sortedPosts.map(({ slug, data: { title, date, tags } }) => (
                 <li>
                     <a href={`/posts/${slug}`}>{title}</a>
                     <div>{date.toLocaleDateString()}</div>
+                    {tags && (
+                        <ul>
+                            {tags?.map(tag => (
+                                <li>{tag}</li>
+                            ))}
+                        </ul>
+                    )}
                 </li>
             ))
         }
