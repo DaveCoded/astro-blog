@@ -1,7 +1,19 @@
 ---
 import PageLayout from '@layouts/page-layout.astro';
+import { getCollection } from 'astro:content';
+
+const postEntries = await getCollection('posts');
 ---
 
 <PageLayout title="Home">
     <h1>My Astro site</h1>
+    <ol>
+        {
+            postEntries.map(({ slug, data: { title } }) => (
+                <li>
+                    <a href={`/posts/${slug}`}>{title}</a>
+                </li>
+            ))
+        }
+    </ol>
 </PageLayout>
