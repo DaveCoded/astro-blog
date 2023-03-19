@@ -1,0 +1,91 @@
+---
+import PageLayout from '@layouts/page-layout.astro';
+
+const PUYL_LINK = 'https://prompt.davebernhard.com/';
+const LODASH_CODEMOD_LINK = 'https://github.com/DaveCoded/lodash-imports-codemod';
+const PASSWORD_GENERATOR_LINK = 'https://password-gen.davebernhard.com/';
+---
+
+<PageLayout title="Projects">
+    <h1>Projects</h1>
+    <ol>
+        <li>
+            <a href={LODASH_CODEMOD_LINK} target="_blank" rel="noreferrer noopener">
+                <img
+                    src="/images/projects/github-mark.svg"
+                    alt="Github logo"
+                    width={60}
+                    height={60}
+                />
+            </a>
+            <div>
+                <a href={LODASH_CODEMOD_LINK} target="_blank" rel="noreferrer noopener">
+                    <h2>Lodash imports codemod</h2>
+                </a>
+                <p>A codemod for converting to single method imports from lodash</p>
+                <div>
+                    <span>Tech used:</span>
+                    <ul>
+                        <li>jscodeshift</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href={PUYL_LINK} target="_blank" rel="noreferrer noopener">
+                <img
+                    src="/images/projects/PUYL.svg"
+                    alt="Abstract broken circle shape"
+                    width={60}
+                    height={60}
+                />
+            </a>
+            <div>
+                <a href={PUYL_LINK} target="_blank" rel="noopener noreferrer">
+                    <h2>Prompt up your life</h2>
+                </a>
+                <p>
+                    A random prompt generator for practising UI design/development and illustration
+                </p>
+                <div>
+                    <span>Tech used:</span>
+                    <ul>
+                        <li>Svelte</li><li>TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href={PASSWORD_GENERATOR_LINK}>
+                <img
+                    src="/images/projects/frontend-mentor-logo.png"
+                    alt="Frontend Mentor logo"
+                    width={60}
+                    height={60}
+                />
+            </a>
+            <div>
+                <a href={PASSWORD_GENERATOR_LINK} target="_blank" rel="noreferrer noopener">
+                    <h2>Password Generator</h2>
+                </a>
+                <p>
+                    Implementation of{' '}
+                    <a
+                        href="https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        this password generator
+                    </a>{' '}
+                    on Frontend Mentor
+                </p>
+                <div>
+                    <span>Tech used:</span>
+                    <ul>
+                        <li>Gatsby</li><li>TypeScript</li><li>styled-components</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ol>
+</PageLayout>
