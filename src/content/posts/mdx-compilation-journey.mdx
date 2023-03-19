@@ -1,0 +1,15 @@
+---
+title: 'How MDX gets compiled to JSX'
+date: 2022-07-11
+tags: ['ASTs', 'MDX']
+---
+
+import Dropcap from '@components/MDX/dropcap.astro';
+
+<Dropcap>Note</Dropcap> to self: these are the steps to compile from MDX to JSX. Use `remark` to transform
+the MDAST and `rehype` to transform the HAST.
+
+<image
+    src="/images/posts/mdx-compilation-journey/MDX-compilation.svg"
+    alt="Diagram of how MDX gets compiled to JSX"
+/>

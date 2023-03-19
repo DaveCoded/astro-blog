@@ -1,0 +1,26 @@
+---
+title: 'You can remove changes to a file from your PR!'
+date: 2022-07-15
+tags: ['git']
+---
+
+import Dropcap from '@components/MDX/dropcap.astro';
+import MarginNote from '@components/MDX/margin-note.astro';
+
+<Dropcap>Whoops!</Dropcap> I've borked it again. One of my commits contained my changes to the yarn.lock.
+<MarginNote id={1}>
+    ...that only work with *my* local environment because web development with billions of node
+    modules is just wonderful
+</MarginNote>
+
+And I've pushed it and a PR's open and I'm _this_ close 🤏 to throwing my laptop out the window.
+
+> Don't worry. git can handle it. And some hero told me how on SO
+
+Now, I've been working on a branch named `dave/made-a-dumb-error-again`, which branched off `dev`. So, I can just run:
+
+```shell
+git checkout dev -- yarn.lock
+```
+
+And I'm saved thanks to [this SO answer](https://stackoverflow.com/questions/38743912/remove-a-file-from-a-git-pull-request). Many thanks to [Jared Wilber](https://www.jwilber.me/) for saving my bacon.
