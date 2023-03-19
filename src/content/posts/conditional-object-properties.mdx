@@ -8,7 +8,7 @@ If you have an object literal in JavaScript, and you want to add a property to i
 some condition is met, you're in luck. The neatest way is with the spread operator,
 introduced in ES6.
 
-```JavaScript title=conditional-property.js
+```js title=conditional-property.js
 const isConditional = true;
 
 const myObject = {
@@ -16,7 +16,7 @@ const myObject = {
     size: 'enormous',
     aromas: ['jasmine', 'honeysuckle', 'puddle water'],
     ...(isConditional && { optionalProperty: true })
-}
+};
 ```
 
 As you can see, how this actually works syntactically, is by spreading an object -
