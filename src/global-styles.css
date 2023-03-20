@@ -2,3 +2,8 @@
     font-size: 30px;
     font-family: "Rubik", sans-serif;
 }
+
+/* Makes code blocks slightly wider than content in blog posts */
+pre.astro-code {
+    grid-column: popout;
+}
