@@ -15,7 +15,47 @@ const { Content } = await entry.render();
 ---
 
 <PageLayout title={entry.data.title}>
-    <h1>{entry.data.title}</h1>
-    <h2>{entry.data.date}</h2>
-    <Content />
+    <main>
+        <h1>{entry.data.title}</h1>
+        <h2>{entry.data.date}</h2>
+    </main>
+    <div class="blog-post-content">
+        <Content />
+    </div>
 </PageLayout>
+
+<style>
+    .blog-post-content {
+        --gap: clamp(1rem, 6vw, 3rem);
+        --full: minmax(var(--gap), 1fr);
+        --content: min(50ch, 100% - var(--gap) * 2);
+        --popout: minmax(0, 2rem);
+        --feature: minmax(0, 5rem);
+
+        display: grid;
+        grid-template-columns:
+            [full-start] var(--full)
+            [feature-start] var(--feature)
+            [popout-start] var(--popout)
+            [content-start] var(--content) [content-end]
+            var(--popout) [popout-end]
+            var(--feature) [feature-end]
+            var(--full) [full-end];
+    }
+
+    .blog-post-content > :global(*) {
+        grid-column: content;
+    }
+
+    .blog-post-content :global(.popout-layout) {
+        grid-column: popout;
+    }
+
+    .blog-post-content :global(.feature-layout) {
+        grid-column: feature;
+    }
+
+    .blog-post-content :global(.fullbleed-layout) {
+        grid-column: full;
+    }
+</style>
