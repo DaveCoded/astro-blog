@@ -448,10 +448,15 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
-"@fontsource/rubik@^4.5.14":
-  version "4.5.14"
-  resolved "https://registry.yarnpkg.com/@fontsource/rubik/-/rubik-4.5.14.tgz#90962506504eee50ec8deba85e5d08675331f366"
-  integrity sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==
+"@fontsource/inconsolata@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/inconsolata/-/inconsolata-4.5.10.tgz#0660baa34a78c3b6cc21ece3bc1907bc43275dec"
+  integrity sha512-kShpiWE3RD4LH4YlZPbyE4VMt826DA7Ugw1jNJt54mxpP7nUsI9gflQOLWSJ9AMLkqPLpjza9iZkKRmU8Q7MOQ==
+
+"@fontsource/lora@^4.5.13":
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/@fontsource/lora/-/lora-4.5.13.tgz#f68fe5a43699f3ac2921c894ec190de9a6decb45"
+  integrity sha512-SV8z2btHCVpjfyLpuqHNyKH56YuzJdv0tjqbi/Mb7hkXGWgz44RuGYSNAoYCes9y2fzJ2zpYUwfCrvcAEjDqMQ==
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"

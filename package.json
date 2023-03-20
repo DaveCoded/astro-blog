@@ -11,7 +11,8 @@
     },
     "dependencies": {
         "@astrojs/mdx": "^0.17.2",
-        "@fontsource/rubik": "^4.5.14",
+        "@fontsource/inconsolata": "^4.5.10",
+        "@fontsource/lora": "^4.5.13",
         "astro": "^2.0.15"
     }
 }
