@@ -58,4 +58,10 @@ const { Content } = await entry.render();
     .blog-post-content :global(.fullbleed-layout) {
         grid-column: full;
     }
+
+    /* todo: this is a crap way of styling things in you MDX content. Change it */
+    .blog-post-content :global(p) {
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
 </style>
