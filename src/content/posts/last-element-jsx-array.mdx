@@ -33,42 +33,42 @@ Here's how we could list out our heroes, putting an `<hr />` (horizontal rule) a
 but the last. First, we remember that the second argument of JavaScript's `.map()` array
 function is an **index**. Then, we use it:
 
-```JavaScript title=file.jsx
+```js title=file.jsx
 const powerRangers = [
-  {
-    color: 'Red',
-    name: 'Jason Lee Scott'
-  },
-  {
-    color: 'Yellow',
-    name: 'Trini Kwan'
-  },
-  {
-    color: 'Black',
-    name: 'Zack Taylor'
-  },
-  {
-    color: 'Pink',
-    name: 'Kimberly Hart'
-  },
-  {
-    color: 'Blue',
-    name: 'Billy Cranston'
-  }
-]
+    {
+        color: 'Red',
+        name: 'Jason Lee Scott'
+    },
+    {
+        color: 'Yellow',
+        name: 'Trini Kwan'
+    },
+    {
+        color: 'Black',
+        name: 'Zack Taylor'
+    },
+    {
+        color: 'Pink',
+        name: 'Kimberly Hart'
+    },
+    {
+        color: 'Blue',
+        name: 'Billy Cranston'
+    }
+];
 
-const listOfRangers = () =>  (
-  <ol>
-    {powerRangers.map(({ color, name }, index) => (
-      <>
-        <li key={index}>
-            {name} was the {color} Ranger
-        </li>
-        {index === powerRangers.length - 1 ? null : <hr />}
-      </>
-    ))}
-  </ol>
-)
+const listOfRangers = () => (
+    <ol>
+        {powerRangers.map(({ color, name }, index) => (
+            <>
+                <li key={index}>
+                    {name} was the {color} Ranger
+                </li>
+                {index === powerRangers.length - 1 ? null : <hr />}
+            </>
+        ))}
+    </ol>
+);
 ```
 
 That handy `<>` tag is the same as `React.Fragment`. Since we're rendering an `li` and an
