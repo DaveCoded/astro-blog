@@ -1,6 +1,6 @@
 ---
 import PageLayout from '@layouts/page-layout.astro';
-import { getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -10,22 +10,47 @@ export async function getStaticPaths() {
         props: { entry }
     }));
 }
+
+interface Props {
+    entry: CollectionEntry<'posts'>;
+}
+
 // 2. When it's time to render, you can get the entry directly from the prop
 const { entry } = Astro.props;
+const { title, date } = entry.data;
 const { Content } = await entry.render();
 ---
 
-<PageLayout title={entry.data.title}>
+<PageLayout title={title}>
     <main>
-        <h1>{entry.data.title}</h1>
-        <h2>{entry.data.date}</h2>
+        <header>
+            <h1>{title}</h1>
+            <div class="date">{date.toLocaleDateString()}</div>
+        </header>
+        <div class="blog-post-content">
+            <Content />
+        </div>
     </main>
-    <div class="blog-post-content">
-        <Content />
-    </div>
 </PageLayout>
 
 <style>
+    header {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding: 4rem 8rem;
+        background-color: #c1fa6b;
+    }
+
+    h1 {
+        font-size: 4rem;
+        margin: 0 auto 1.5rem;
+        max-width: 900px;
+    }
+
+    .date {
+        font-size: 1.1rem;
+    }
+
     .blog-post-content {
         --gap: clamp(1rem, 6vw, 3rem);
         --full: minmax(var(--gap), 1fr);
