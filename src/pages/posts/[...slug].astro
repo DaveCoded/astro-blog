@@ -25,7 +25,7 @@ const { Content } = await entry.render();
     <main>
         <header>
             <h1>{title}</h1>
-            <div class="date">{date.toLocaleDateString()}</div>
+            <p class="date">{date.toLocaleDateString()}</p>
         </header>
         <div class="blog-post-content">
             <Content />
@@ -42,19 +42,20 @@ const { Content } = await entry.render();
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: var(--step-4);
         margin: 0 auto 1.5rem;
         max-width: 900px;
     }
 
     .date {
-        font-size: 1.1rem;
+        font-size: var(--step-0);
+        font-weight: 250;
     }
 
     .blog-post-content {
         --gap: clamp(1rem, 6vw, 3rem);
         --full: minmax(var(--gap), 1fr);
-        --content: min(50ch, 100% - var(--gap) * 2);
+        --content: min(60ch, 100% - var(--gap) * 2);
         --popout: minmax(0, 2rem);
         --feature: minmax(0, 5rem);
 
@@ -86,8 +87,17 @@ const { Content } = await entry.render();
     }
 
     /* todo: this is a crap way of styling things in you MDX content. Change it */
-    .blog-post-content :global(p) {
-        font-size: 1.4rem;
-        line-height: 1.6;
+    .blog-post-content :global(p),
+    .blog-post-content :global(ul),
+    .blog-post-content :global(ol) {
+        font-size: var(--step-0);
+        line-height: 1.5;
+        margin-bottom: var(--space-s);
+        font-weight: 350;
+    }
+
+    .blog-post-content :global(h2) {
+        font-size: var(--step-3);
+        margin: var(--space-m) 0;
     }
 </style>

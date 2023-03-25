@@ -1,3 +1,73 @@
+/* ================================================== */
+/* ================= font sizes ===================== */
+/* ================================================== */
+/* @link https://utopia.fyi/type/calculator?c=320,20,1.25,1240,24,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    /* Step -2: 11.52px → 12.00px */
+    --step--2: clamp(0.72rem, calc(0.71rem + 0.05vw), 0.75rem);
+      /* Step -1: 14.40px → 16.97px */
+    --step--1: clamp(0.90rem, calc(0.84rem + 0.28vw), 1.06rem);
+      /* Step 0: 18.00px → 24.00px */
+    --step-0: clamp(1.13rem, calc(0.99rem + 0.65vw), 1.50rem);
+      /* Step 1: 22.50px → 33.94px */
+    --step-1: clamp(1.41rem, calc(1.16rem + 1.24vw), 2.12rem);
+      /* Step 2: 28.13px → 47.99px */
+    --step-2: clamp(1.76rem, calc(1.33rem + 2.16vw), 3.00rem);
+      /* Step 3: 35.16px → 67.85px */
+    --step-3: clamp(2.20rem, calc(1.49rem + 3.55vw), 4.24rem);
+      /* Step 4: 43.95px → 95.94px */
+    --step-4: clamp(2.75rem, calc(1.62rem + 5.65vw), 6.00rem);
+      /* Step 5: 54.93px → 135.66px */
+    --step-5: clamp(3.43rem, calc(1.68rem + 8.77vw), 8.48rem);
+}
+
+/* ================================================== */
+/* ================= space sizes ==================== */
+/* ================================================== */
+/* @link https://utopia.fyi/space/calculator?c=320,18,1.25,1240,24,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    /* Space 3xs: 5px → 6px */
+    --space-3xs: clamp(0.31rem, calc(0.29rem + 0.11vw), 0.38rem);
+      /* Space 2xs: 9px → 12px */
+    --space-2xs: clamp(0.56rem, calc(0.50rem + 0.33vw), 0.75rem);
+      /* Space xs: 14px → 18px */
+    --space-xs: clamp(0.88rem, calc(0.79rem + 0.43vw), 1.13rem);
+      /* Space s: 18px → 24px */
+    --space-s: clamp(1.13rem, calc(0.99rem + 0.65vw), 1.50rem);
+      /* Space m: 27px → 36px */
+    --space-m: clamp(1.69rem, calc(1.49rem + 0.98vw), 2.25rem);
+      /* Space l: 36px → 48px */
+    --space-l: clamp(2.25rem, calc(1.99rem + 1.30vw), 3.00rem);
+      /* Space xl: 54px → 72px */
+    --space-xl: clamp(3.38rem, calc(2.98rem + 1.96vw), 4.50rem);
+      /* Space 2xl: 72px → 96px */
+    --space-2xl: clamp(4.50rem, calc(3.98rem + 2.61vw), 6.00rem);
+      /* Space 3xl: 108px → 144px */
+    --space-3xl: clamp(6.75rem, calc(5.97rem + 3.91vw), 9.00rem);
+      /* One-up pairs */
+    /* Space 3xs-2xs: 5px → 12px */
+    --space-3xs-2xs: clamp(0.31rem, calc(0.16rem + 0.76vw), 0.75rem);
+      /* Space 2xs-xs: 9px → 18px */
+    --space-2xs-xs: clamp(0.56rem, calc(0.37rem + 0.98vw), 1.13rem);
+      /* Space xs-s: 14px → 24px */
+    --space-xs-s: clamp(0.88rem, calc(0.66rem + 1.09vw), 1.50rem);
+      /* Space s-m: 18px → 36px */
+    --space-s-m: clamp(1.13rem, calc(0.73rem + 1.96vw), 2.25rem);
+      /* Space m-l: 27px → 48px */
+    --space-m-l: clamp(1.69rem, calc(1.23rem + 2.28vw), 3.00rem);
+      /* Space l-xl: 36px → 72px */
+    --space-l-xl: clamp(2.25rem, calc(1.47rem + 3.91vw), 4.50rem);
+      /* Space xl-2xl: 54px → 96px */
+    --space-xl-2xl: clamp(3.38rem, calc(2.46rem + 4.57vw), 6.00rem);
+      /* Space 2xl-3xl: 72px → 144px */
+    --space-2xl-3xl: clamp(4.50rem, calc(2.93rem + 7.83vw), 9.00rem);
+      /* Custom pairs */
+    /* Space s-l: 18px → 48px */
+    --space-s-l: clamp(1.13rem, calc(0.47rem + 3.26vw), 3.00rem);
+  }
+
 /* CSS Reset: https://meyerweb.com/eric/tools/css/reset/ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -45,12 +115,7 @@ table {
 /* ==== END OF CSS RESET ==== */
 
 body {
-    font-size: 20px;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Lora", serif;
+    font-family: "Crimson ProVariable", serif;
 }
 
 /* ==== INLINE CODE ==== */
@@ -74,4 +139,8 @@ pre.astro-code {
 pre.astro-code * {
     font-family: "Inconsolata", monospace;
     background: inherit; /* Removes background color from inline code */
+}
+
+em {
+    font-style: italic;
 }
