@@ -4,14 +4,14 @@
 /* @link https://utopia.fyi/type/calculator?c=320,20,1.25,1240,24,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
-    --step--2: clamp(0.78rem, calc(0.76rem + 0.11vw), 0.84rem);
-    --step--1: clamp(0.94rem, calc(0.87rem + 0.33vw), 1.13rem);
-    --step-0: clamp(1.13rem, calc(0.99rem + 0.65vw), 1.50rem);
-    --step-1: clamp(1.35rem, calc(1.12rem + 1.13vw), 2.00rem);
-    --step-2: clamp(1.62rem, calc(1.26rem + 1.82vw), 2.67rem);
-    --step-3: clamp(1.94rem, calc(1.38rem + 2.80vw), 3.55rem);
-    --step-4: clamp(2.33rem, calc(1.50rem + 4.18vw), 4.74rem);
-    --step-5: clamp(2.80rem, calc(1.58rem + 6.11vw), 6.31rem);
+    --step--2: clamp(1.04rem, calc(1.1rem + -0.08vw), 1.09rem);
+    --step--1: clamp(1.22rem, calc(1.2rem + 0.13vw), 1.3rem);
+    --step-0: clamp(1.38rem, calc(1.29rem + 0.43vw), 1.63rem);
+    --step-1: clamp(1.55rem, calc(1.38rem + 0.84vw), 2.03rem);
+    --step-2: clamp(1.74rem, calc(1.46rem + 1.39vw), 2.54rem);
+    --step-3: clamp(1.96rem, calc(1.53rem + 2.12vw), 3.17rem);
+    --step-4: clamp(2.2rem, calc(1.59rem + 3.07vw), 3.97rem);
+    --step-5: clamp(2.48rem, calc(1.61rem + 4.32vw), 4.96rem);
 }
 
 /* ================================================== */
@@ -21,90 +21,180 @@
 
 :root {
     --space-3xs: clamp(0.31rem, calc(0.29rem + 0.11vw), 0.38rem);
-  --space-2xs: clamp(0.56rem, calc(0.50rem + 0.33vw), 0.75rem);
-  --space-xs: clamp(0.88rem, calc(0.79rem + 0.43vw), 1.13rem);
-  --space-s: clamp(1.13rem, calc(0.99rem + 0.65vw), 1.50rem);
-  --space-m: clamp(1.69rem, calc(1.49rem + 0.98vw), 2.25rem);
-  --space-l: clamp(2.25rem, calc(1.99rem + 1.30vw), 3.00rem);
-  --space-xl: clamp(3.38rem, calc(2.98rem + 1.96vw), 4.50rem);
-  --space-2xl: clamp(4.50rem, calc(3.98rem + 2.61vw), 6.00rem);
-  --space-3xl: clamp(6.75rem, calc(5.97rem + 3.91vw), 9.00rem);
+    --space-2xs: clamp(0.56rem, calc(0.5rem + 0.33vw), 0.75rem);
+    --space-xs: clamp(0.88rem, calc(0.79rem + 0.43vw), 1.13rem);
+    --space-s: clamp(1.13rem, calc(0.99rem + 0.65vw), 1.5rem);
+    --space-m: clamp(1.69rem, calc(1.49rem + 0.98vw), 2.25rem);
+    --space-l: clamp(2.25rem, calc(1.99rem + 1.3vw), 3rem);
+    --space-xl: clamp(3.38rem, calc(2.98rem + 1.96vw), 4.5rem);
+    --space-2xl: clamp(4.5rem, calc(3.98rem + 2.61vw), 6rem);
+    --space-3xl: clamp(6.75rem, calc(5.97rem + 3.91vw), 9rem);
 
-  /* One-up pairs */
-  --space-3xs-2xs: clamp(0.31rem, calc(0.16rem + 0.76vw), 0.75rem);
-  --space-2xs-xs: clamp(0.56rem, calc(0.37rem + 0.98vw), 1.13rem);
-  --space-xs-s: clamp(0.88rem, calc(0.66rem + 1.09vw), 1.50rem);
-  --space-s-m: clamp(1.13rem, calc(0.73rem + 1.96vw), 2.25rem);
-  --space-m-l: clamp(1.69rem, calc(1.23rem + 2.28vw), 3.00rem);
-  --space-l-xl: clamp(2.25rem, calc(1.47rem + 3.91vw), 4.50rem);
-  --space-xl-2xl: clamp(3.38rem, calc(2.46rem + 4.57vw), 6.00rem);
-  --space-2xl-3xl: clamp(4.50rem, calc(2.93rem + 7.83vw), 9.00rem);
+    /* One-up pairs */
+    --space-3xs-2xs: clamp(0.31rem, calc(0.16rem + 0.76vw), 0.75rem);
+    --space-2xs-xs: clamp(0.56rem, calc(0.37rem + 0.98vw), 1.13rem);
+    --space-xs-s: clamp(0.88rem, calc(0.66rem + 1.09vw), 1.5rem);
+    --space-s-m: clamp(1.13rem, calc(0.73rem + 1.96vw), 2.25rem);
+    --space-m-l: clamp(1.69rem, calc(1.23rem + 2.28vw), 3rem);
+    --space-l-xl: clamp(2.25rem, calc(1.47rem + 3.91vw), 4.5rem);
+    --space-xl-2xl: clamp(3.38rem, calc(2.46rem + 4.57vw), 6rem);
+    --space-2xl-3xl: clamp(4.5rem, calc(2.93rem + 7.83vw), 9rem);
 
-  /* Custom pairs */
-  --space-s-l: clamp(1.13rem, calc(0.47rem + 3.26vw), 3.00rem);
+    /* Custom pairs */
+    --space-s-l: clamp(1.13rem, calc(0.47rem + 3.26vw), 3rem);
+}
+
+:root {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(80ch, 100% - var(--gap) * 2);
+    --popout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
 }
 
 /* ============= COLORS ============ */
 :root {
-    --bright-green: #c1fa6b;
+    --color-white: #f3f3ff;
+    --color-black: #03010a;
     --color-inline-code: #ddeaee;
     --color-footer: #edf0f1;
 }
 
 /* CSS Reset: https://meyerweb.com/eric/tools/css/reset/ */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 /* ol, ul {
 	list-style: none;
 } */
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 /* ==== END OF CSS RESET ==== */
 
 body {
-    font-family: "Crimson ProVariable", serif;
+    font-family: 'EB GaramondVariable', serif;
+    color: var(--color-black);
 }
 
 /* ==== INLINE CODE ==== */
 code {
-    font-family: "Inconsolata", monospace;
-    font-size: .84em; /* Accounts for font being larger than Crimson Pro */
+    font-family: 'Inconsolata', monospace;
+    font-size: 0.785em; /* Accounts for font being larger than EB Garamond */
     background-color: var(--color-inline-code);
     padding: 1px 3px;
     border-radius: 4px;
@@ -120,7 +210,8 @@ pre.astro-code {
 }
 
 pre.astro-code * {
-    font-family: "Inconsolata", monospace;
+    font-family: 'Inconsolata', monospace;
+    padding: 0;
     font-size: var(--step--1);
     line-height: 1.5;
     background: inherit; /* Removes background color from inline code */

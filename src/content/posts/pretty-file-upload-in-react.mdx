@@ -95,7 +95,10 @@ object holds an array: `event.target.files`. It's an array because adding the `m
 attribute allows a user to upload more than one file. Each item (file) in this array has
 four useful properties, and four methods for manipulating the file Blob.
 
-<img src="/images/posts/pretty-file-upload-in-react/file-properties.png" />
+<img
+    src="/images/posts/pretty-file-upload-in-react/file-properties.png"
+    style="width: 100%; margin-bottom: var(--space-s)"
+/>
 
 You'll usually want to check the file `type` at this point and show an error if a user has
 uploaded a file with an extension you're not supporting. Adding the `accept` attribute to

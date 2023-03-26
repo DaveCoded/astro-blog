@@ -81,30 +81,30 @@ that interact with the database.
 
 ## The normal forms
 
-#### 1NF
+### 1NF
 
 -   Every record (row) must be unique
 -   Each cell contains only one value
 
-#### 2NF
+### 2NF
 
 -   All attributes (columns that aren't keys) are dependent on the keys
 -   In other words, if you have a column or columns that are related to each other, or some
     other data, but not the primary key, then they belong in a different table
 
-#### 3NF
+### 3NF
 
 -   All columns/fields can be determined only by the key in the table, and not by any other
     column
 
-#### BCNF (Boyce-Codd Normal Form)
+### BCNF (Boyce-Codd Normal Form)
 
 BCNF is a slightly stronger version of 3NF developed to address a few edge cases. Its
 definition is slightly complex and beyond the scope of this introduction. In short, a
 relation (table) will be in BCNF if it satisfies 3NF and does not contain any overlapping
 candidate keys.
 
-#### 4NF
+### 4NF
 
 -   No multi-valued dependencies
 -   Let's assume your primary key is a customer ID. What if that customers has multiple
