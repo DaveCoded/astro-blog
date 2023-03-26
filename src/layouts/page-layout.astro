@@ -1,5 +1,6 @@
 ---
-import '@fontsource/crimson-pro/400.css';
+import '@fontsource/inconsolata';
+// import '@fontsource/crimson-pzo/400.css';
 import '@fontsource/crimson-pro/variable.css'; // Contains ONLY variable weights and no other axes.
 import '@fontsource/crimson-pro/variable-italic.css'; // Italic variant.
 import '../global-styles.css';
@@ -20,10 +21,42 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <nav>
-            <a href="/">Blog</a>
-            <a href="/projects">Projects</a>
-        </nav>
-        <slot />
+        <div class="grid-container">
+            <nav>
+                <a href="/">Blog</a>
+                <a href="/projects">Projects</a>
+            </nav>
+            <slot />
+            <footer>
+                <p>
+                    &copy; {new Date().getFullYear()} Dave Bernhard
+                </p>
+            </footer>
+        </div>
     </body>
 </html>
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    nav {
+        padding: var(--space-m) var(--space-s);
+        font-size: var(--step-1);
+    }
+
+    nav a + a {
+        margin-left: var(--space-s);
+    }
+
+    footer {
+        margin-top: var(--space-2xl);
+        padding: var(--space-l);
+        background-color: var(--color-footer);
+        text-align: center;
+        font-size: var(--step--1);
+    }
+</style>

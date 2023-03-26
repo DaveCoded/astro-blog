@@ -34,17 +34,23 @@ const { Content } = await entry.render();
 </PageLayout>
 
 <style>
+    :root {
+        --gap: clamp(1rem, 6vw, 3rem);
+        --full: minmax(var(--gap), 1fr);
+        --content: min(70ch, 100% - var(--gap) * 2);
+        --popout: minmax(0, 2rem);
+        --feature: minmax(0, 5rem);
+    }
+
     header {
         text-align: center;
-        margin-bottom: 4rem;
-        padding: 4rem 8rem;
-        background-color: #c1fa6b;
+        padding: var(--space-2xl) var(--gap) var(--space-xl);
     }
 
     h1 {
         font-size: var(--step-4);
-        margin: 0 auto 1.5rem;
-        max-width: 900px;
+        margin: 0 auto var(--space-xs);
+        max-width: 1100px;
     }
 
     .date {
@@ -53,12 +59,6 @@ const { Content } = await entry.render();
     }
 
     .blog-post-content {
-        --gap: clamp(1rem, 6vw, 3rem);
-        --full: minmax(var(--gap), 1fr);
-        --content: min(60ch, 100% - var(--gap) * 2);
-        --popout: minmax(0, 2rem);
-        --feature: minmax(0, 5rem);
-
         display: grid;
         grid-template-columns:
             [full-start] var(--full)
@@ -99,5 +99,15 @@ const { Content } = await entry.render();
     .blog-post-content :global(h2) {
         font-size: var(--step-3);
         margin: var(--space-m) 0;
+    }
+
+    .blog-post-content :global(h3) {
+        font-size: var(--step-2);
+        margin-bottom: var(--space-s);
+    }
+
+    .blog-post-content :global(h4) {
+        font-size: var(--step-1);
+        margin-bottom: var(--space-s);
     }
 </style>
