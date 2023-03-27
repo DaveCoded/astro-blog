@@ -6,25 +6,88 @@ const postEntries = await getCollection('posts');
 const sortedPosts = postEntries.sort((a, b) => {
     return a.data.date > b.data.date ? -1 : 1;
 });
+
+const formatDate = (date: Date) => {
+    const options = { year: 'numeric' as const, month: 'long' as const, day: 'numeric' as const };
+    return new Date(date).toLocaleDateString('en', { ...options });
+};
 ---
 
 <PageLayout title="Home">
-    <h1>My Astro site</h1>
-    <ol>
-        {
-            sortedPosts.map(({ slug, data: { title, date, tags } }) => (
-                <li>
-                    <a href={`/posts/${slug}`}>{title}</a>
-                    <div>{date.toLocaleDateString()}</div>
-                    {tags && (
-                        <ul>
-                            {tags?.map(tag => (
-                                <li>{tag}</li>
-                            ))}
-                        </ul>
-                    )}
-                </li>
-            ))
-        }
-    </ol>
+    <main>
+        <p>Here are some things what I have written.</p>
+        <ol>
+            {
+                sortedPosts.map(({ slug, data: { title, date, tags } }) => (
+                    <li class="post">
+                        <a class="title-link" href={`/posts/${slug}`}>
+                            <h2 class="title">{title}</h2>
+                        </a>
+                        <div class="metadata-container">
+                            <div class="date">{formatDate(date)}</div>
+                            {tags && (
+                                <span>|</span>
+                                <ul class="tag-list">
+                                    {tags?.map(tag => (
+                                        <li>{tag}</li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    </li>
+                ))
+            }
+        </ol>
+    </main>
 </PageLayout>
+
+<style>
+    main {
+        display: grid;
+    }
+
+    main > * {
+        grid-column: content;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .post {
+        font-size: var(--step-1);
+        margin-bottom: var(--space-l);
+    }
+
+    .title-link {
+        text-decoration: none;
+    }
+
+    .title-link:hover .title {
+        text-decoration: underline;
+        color: var(--color-link-hover);
+    }
+
+    .title {
+        color: var(--color-black);
+        margin-bottom: var(--space-xs);
+    }
+
+    .metadata-container {
+        display: flex;
+        gap: var(--space-2xs);
+        font-family: 'JostVariable';
+        font-weight: 300;
+        font-size: var(--step--1);
+    }
+
+    .date {
+        color: var(--color-black);
+    }
+
+    .tag-list {
+        display: flex;
+        gap: var(--space-2xs);
+        flex-wrap: wrap;
+    }
+</style>
