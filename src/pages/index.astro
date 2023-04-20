@@ -15,7 +15,6 @@ const formatDate = (date: Date) => {
 
 <PageLayout title="Home">
     <main>
-        <p>Here are some things what I have written.</p>
         <ol>
             {
                 sortedPosts.map(({ slug, data: { title, date, tags } }) => (
@@ -44,6 +43,7 @@ const formatDate = (date: Date) => {
 <style>
     main {
         display: grid;
+        grid-template-columns: var(--grid-columns-definition);
     }
 
     main > * {
@@ -70,7 +70,7 @@ const formatDate = (date: Date) => {
 
     .title {
         color: var(--color-black);
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-2xs);
     }
 
     .metadata-container {
@@ -78,11 +78,8 @@ const formatDate = (date: Date) => {
         gap: var(--space-2xs);
         font-family: 'JostVariable';
         font-weight: 300;
-        font-size: var(--step--1);
-    }
-
-    .date {
-        color: var(--color-black);
+        font-size: var(--step--2);
+        color: var(--color-grey-800);
     }
 
     .tag-list {

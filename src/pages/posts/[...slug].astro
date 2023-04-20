@@ -57,14 +57,7 @@ const { Content } = await entry.render();
 
     .blog-post-content {
         display: grid;
-        grid-template-columns:
-            [full-start] var(--full)
-            [feature-start] var(--feature)
-            [popout-start] var(--popout)
-            [content-start] var(--content) [content-end]
-            var(--popout) [popout-end]
-            var(--feature) [feature-end]
-            var(--full) [full-end];
+        grid-template-columns: var(--grid-columns-definition);
     }
 
     .blog-post-content > :global(*) {
@@ -83,7 +76,7 @@ const { Content } = await entry.render();
         grid-column: full;
     }
 
-    /* todo: this is a crap way of styling things in you MDX content. Change it */
+    /* todo: this is a crap way of styling things in you MDX content. Use component replacement */
     .blog-post-content :global(p),
     .blog-post-content :global(ul),
     .blog-post-content :global(ol) {

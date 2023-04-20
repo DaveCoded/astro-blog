@@ -50,6 +50,9 @@
     --content: min(80ch, 100% - var(--gap) * 2);
     --popout: minmax(0, 2rem);
     --feature: minmax(0, 5rem);
+    --grid-columns-definition: [full-start] var(--full) [feature-start] var(--feature)
+        [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout)
+        [popout-end] var(--feature) [feature-end] var(--full) [full-end];
 }
 
 /* ============= COLORS ============ */
@@ -60,6 +63,7 @@
     --color-footer: #edf0f1;
     --color-link-hover: #2727c8;
     --potential-grey: #e4e5e9;
+    --color-grey-800: #323439;
 }
 
 /* CSS Reset: https://meyerweb.com/eric/tools/css/reset/ */
